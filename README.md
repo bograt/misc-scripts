@@ -6,10 +6,10 @@ These are just a bunch of scripts I write to make my life easier.They're all jan
 
 ## Scripts
 
-201.sh:
+201.sh
 : Very specific use case for a French course I taught. Refer to its README
 
-wifiadd:
+wifiadd
 : simple script to add new wireless networks to the wpa_supplicant config.
 
 ## todo
