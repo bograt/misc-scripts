@@ -1,0 +1,13 @@
+#!/bin/zsh
+
+# Prompt for wifi password
+echo "Enter the password"; read pswd
+
+# Scan for wireless networks, clean output, and pass to dmenu
+name=$(sudo iw dev wlp3s0 scan | grep SSID | grep -v "SSID List" | grep -v x00 | sed 's/.SSID..//;s/[ \t\f\v]//' | uniq | dmenu -l 10 -p "Select the network")
+
+# Echo SSID and password into wpa_supplicant config (requires write permission)
+echo 'network={\n\tssid="'$name'"\n\tpsk="'$pswd'"\n}' >> /etc/wpa_supplicant/wpa_supplicant-wlp3s0.conf
+
+# Restart wpa_supplicant
+sudo sv restart wpa_supplicant
