@@ -1,0 +1,11 @@
+#!/bin/bash
+
+# Open new file for main content
+$EDITOR ssgtmp.html ;
+# Find main content (labeled [CONTENT]) and replace
+sed -e '/\[CONTENT\]/{r ssgtmp.html' -e 'd}' template > script-result
+# Prompt for title
+echo "What is the title?"
+read title
+sed -i "s/\[TITLE\]/$title/" script-result
+mv script-result "$title".html
