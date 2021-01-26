@@ -6,6 +6,9 @@ These are just a bunch of scripts I write to make my life easier.They're all jan
 
 ## Scripts
 
+s5
+: Stupid Simple Static Site Script
+
 201.sh
 : Very specific use case for a French course I taught. Refer to its README
 
