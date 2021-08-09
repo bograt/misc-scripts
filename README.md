@@ -19,6 +19,9 @@ work.
 wifiadd
 : simple script to add new wireless networks to the wpa_supplicant config.
 
+chname
+: POSIX script to rename macs to "$1"-SerialNumber
+
 ## todo
 - improve wifiadd
 - sort through other scripts, adding what's not just borrowed.
