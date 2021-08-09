@@ -1,0 +1,14 @@
+#!/bin/sh
+# Script for changing hostname to convention (Location-SN) on macs
+
+# Check for root privileges
+if [ "$(id -u)" -ne 0 ]; then echo "Must be root to execute script" ; exit 1 ; fi
+# Check for argument; if empty, print error message and exit
+if [ -z "$1" ] ;  then echo "Usage: chname [3 letter location]" ; exit 1 ; fi
+
+# Assign mac's serial number to variable 'sn'
+sn=$(system_profiler SPHardwareDataType | grep Serial | awk '{ print $(NF) }')
+if [ -z "${sn}" ] ; then echo "Error obtaining serial number. Is this not a mac?" ; exit 1 ; fi
+
+# Set mac's hostname to first argument dash serial number
+scutil --set HostName "$1"-"$sn"
