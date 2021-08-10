@@ -22,6 +22,9 @@ wifiadd
 chname
 : POSIX script to rename macs to "$1"-SerialNumber
 
+diceroller.py
+: basic program for rolling dice in RPGs (like D&D) in XdX format.
+
 ## todo
 - improve wifiadd
 - sort through other scripts, adding what's not just borrowed.
