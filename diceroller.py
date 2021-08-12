@@ -9,5 +9,9 @@ while True:
     d = roll.find('d')
     dice = int(roll[0:d])
     sides = int(roll[d+1:])
-    print(dice*sides)
-
+    for i in range(0,dice):
+        result = randint(1,sides)
+        total += result
+        print(result, end=' ')
+    print("Total:", total)
+    total = 0
